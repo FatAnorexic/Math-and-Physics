@@ -1,4 +1,4 @@
-from numpy import *
+
 
 class Trapazoid:
 
