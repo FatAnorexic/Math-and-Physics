@@ -3,16 +3,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def f():
-    N=100
+    N=100000
     npond=0
     for i in range(1, N):
         d=np.hypot(random.random(),random.random())
         if d<1:npond+=1
         Apond=(4*npond/i)
-    print(Apond)
+    print('{0:.3f}'.format(Apond))
 
 
-#f()
+f()
 
 def f_book():
     N=100000
@@ -32,5 +32,5 @@ def f_book():
     plt.scatter(X_pond,Y_pond, marker='o', color='blue')
     plt.grid()
     plt.show()
-    print(Apond)
+    print('{0:.3f}'.format(Apond))
 f_book()
