@@ -1,5 +1,5 @@
 from numpy import *
-
+#A few classes of various integration methods used in computational physics/math
 class Trapazoid:
 
     def __init__(self,f, A, B, N):
