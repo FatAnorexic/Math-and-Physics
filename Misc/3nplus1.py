@@ -23,4 +23,10 @@ def seed():
 
     plt.grid()
     plt.show()
-seed()
+
+
+def main():
+    seed()
+
+if __name__=='__main__':
+    main()
