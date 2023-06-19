@@ -1,20 +1,9 @@
-class Node():
-    def __init__(self,parent=None, position=None):
-        self.parent=parent
-        self.position=position
-
-        self.g=0
-        self.h=0
-        self.f=0
-
-    def __eq__(self, other):
-        return self.position==other.position
-
+import Node
 def astar(maze, start, end):
     #create a starting and end position
-    start_n=Node(None,start)
+    start_n=Node.Node(None, start)
     start_n.g=start_n.h=start_n.f=0
-    end_n=Node(None, end)
+    end_n=Node.Node(None, end)
     end_n.g=end_n.h=end_n.f=0
 
     openL=[]
@@ -49,7 +38,7 @@ def astar(maze, start, end):
                 continue
             if maze[node_pos[0]][node_pos[1]] !=0:
                 continue
-            new_n=Node(current, node_pos)
+            new_n=Node.Node(current, node_pos)
 
             children.append(new_n)
 
