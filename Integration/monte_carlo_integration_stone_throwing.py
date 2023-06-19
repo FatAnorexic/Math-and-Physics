@@ -12,7 +12,7 @@ def f():
     print('{0:.3f}'.format(Apond))
 
 
-f()
+
 
 def f_book():
     N=100000
@@ -33,4 +33,10 @@ def f_book():
     plt.grid()
     plt.show()
     print('{0:.3f}'.format(Apond))
-f_book()
+
+def main():
+    f()
+    f_book()
+
+if __name__=='__main__':
+    main()
