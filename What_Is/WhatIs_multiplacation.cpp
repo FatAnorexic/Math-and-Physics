@@ -26,7 +26,6 @@ int multiplacation(int n, int m) {
 
 int main() {
     int a, b, result, check;
-    std::cout << result;
     std::cout << "Enter the two numbers to be multiplied: ";
     std::cin >> a >> b;
     
