@@ -7,18 +7,20 @@ out, this is an algorithm of what that might look like.
 """
 
 #this isnt entirely correct, do not merge with main-needs work
+import numpy as np
 
 def fractional(deposit):
     leant=[] 
     on_hand=[]
+    
 
     while(deposit>=0.01):
         reserve=deposit*0.1
         deposit-=reserve
-        leant.append(round(deposit, 2))
+        leant.append((deposit))
         on_hand.append(round(reserve, 2))
          
-    print(f'Leant:\t{sum(leant):.2f}\n\n')
+    print(f'Leant:\t{leant:.2f}\n\n')
 
 deposit=10000.00
 fractional(deposit)
