@@ -2,6 +2,13 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+This uses random tossing of pebbles to estimate the size of a pool of size π.
+One is a much more refined optimal solution f() where as the other is one the 
+book Computational Physics by Rubin Landau, Manuel Paez, and Cristian Bordeianu
+walks you through 
+"""
+
 def f():
     N=100000
     npond=0
@@ -18,6 +25,8 @@ def f_book():
     N=100000
     npond=0
     nbox=0
+    #The lists are merely for the graph, we could add a similar set of lists to f() 
+    # for a comparison plot.
     X_pond=[]
     Y_pond=[]
     X_box=[]
