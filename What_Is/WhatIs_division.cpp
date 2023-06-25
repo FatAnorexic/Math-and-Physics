@@ -29,13 +29,16 @@ course for numbers divided by 0.
 #include <iostream>
 #include <cstdlib>
 
+//Right off the bat, we may find ourselves with a remainder: IE 22/4=>5 with a remainder of 2
+//Given we cannot return multiple values in c++ we must build a structure.
 struct divisors {
     int result = 0, remainder = 0;
 };
-
+//And we must define that structure as a returnable data type.
 typedef struct divisors Struct;
 
 Struct division(int a, int b) {
+    //Simple checks|if its 0 we exit and if we have float results we exit
     if (b == 0) {
         printf("You cannot divide by zero: in this program it is undefined\n");
         exit(-1);
@@ -48,6 +51,8 @@ Struct division(int a, int b) {
     Struct d;
     while (a > 0) {
         if (a - b < 0) {
+            //essentially what a remainder is->the absolute value of the total amount left over after
+            //going below zero. 
             d.remainder += abs(a - b);
             return d;
         }
@@ -62,12 +67,14 @@ Struct division(int a, int b) {
 int main() {
     int a, b;
     Struct result;
-
+    //As part of my continuing development, I'm trying f strings to see if it's any cleaner
     printf("Enter two numbers| one to be divided the other as the divisor: \n");
     scanf_s("%d%d", &a, &b);
 
     result = division(abs(a), abs(b));
 
+    //Initially I intended not to allow negative numbers, but when I realized it'd be a simple check and 
+    //-1, I decided it'd be worth the time and effort to include
     if (a < 0 || b < 0) {
         result.result *= -1;
     }
