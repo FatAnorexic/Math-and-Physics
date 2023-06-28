@@ -1,20 +1,22 @@
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 
 can=load_breast_cancer()
-scaler=MinMaxScaler()
+#scaler=MinMaxScaler()
+scaler=StandardScaler() #For shorthand example below
 
 Xtrain, Xtest, ytrain, ytest= train_test_split(can.data, can.target, random_state=1)
 
-scaler.fit(Xtrain)
+#scaler.fit(Xtrain)
 
 #print(f'Training shape {Xtrain.shape}')
 #print(f'Test shape {Xtest.shape}')
 
 #transform the data
-xtrain_scaled=scaler.transform(Xtrain)
-xtest_scale=scaler.transform(Xtest)
+#xtrain_scaled=scaler.transform(Xtrain)
+#xtest_scale=scaler.transform(Xtest)
 #This is what the transformation will do-essentially prepossessing our data to 
 #a range between 0 or 1-This is not true for the test set however
 """
@@ -33,3 +35,8 @@ print(f'per-feature max after:\n{xtest_scale.max(axis=0)}')
 #training set minimum and divides by the training range. Which may be different minimums 
 #and range for the test set.We must fix this. 
 """
+
+#a short cut to fitting and transforming your data:
+#xscaled=scaler.fit(Xtrain).transform(Xtrain)
+#even better
+#xscaled_better=scaler.fit_transform(Xtrain)
