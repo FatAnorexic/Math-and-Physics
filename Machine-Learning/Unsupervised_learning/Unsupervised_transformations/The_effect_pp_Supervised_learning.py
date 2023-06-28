@@ -1,3 +1,4 @@
+#That is, the effect of Preprossed supervised learning
 from sklearn.svm import SVC as svc
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split as tts
