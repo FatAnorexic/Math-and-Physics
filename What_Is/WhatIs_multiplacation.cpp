@@ -26,7 +26,7 @@ int multiplacation(int n, int m) {
 
 int main() {
     int a, b, result, check;
-    std::cout << "Enter the two numbers to be multiplied: ";
+    printf("Enter the two numbers to be multiplied: ");
     std::cin >> a >> b;
     
 
@@ -34,8 +34,7 @@ int main() {
     check = a * b;
 
     if (result == check) {
-        std::cout << "\nThe result checks out|\tCheck: " << check << "\tResult: " << result
-            <<'\n\n';
+        printf("The result checks out| check: %d \t result: %d\n\n", check, result);
     }
 
     return 0;
