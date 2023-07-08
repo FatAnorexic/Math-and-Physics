@@ -1,6 +1,6 @@
 import math
 
-G=6.67430*math.pow(10, -11) #Gravitational constant
+G=6.6743e-11 #Gravitational constant
 
 def Capture_Calculation(stellar_radius, obj_velocity, stellar_mass):
     evs=(2*G*stellar_mass)/stellar_radius   #escape velocity squared| short hand for legibility
