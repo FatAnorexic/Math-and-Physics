@@ -5,7 +5,7 @@ def main():
     for i in range(1,400):
         print(fib(i))
 
-#This is one of the chache decorators->we're using the last 5 values in memory
+#This is one of the cache decorators->we're using the last 5 values in memory
 #By doing so, we greatly improve the speed at which our code executes.
 
 @lru_cache(maxsize=5)
