@@ -13,6 +13,9 @@ def bisection(a, b, err):
             b=c
 
     return c
+def main():
+    test=bisection(-3,4,1e-8)
+    print(f'x= [{test}]')
 
-test=bisection(-3,4,1e-8)
-print(f'x= [{test}]')
+if __name__=='__main__':
+    main()
