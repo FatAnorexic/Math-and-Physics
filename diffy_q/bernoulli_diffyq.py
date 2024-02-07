@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn
-
+import pandas as pd
 seaborn.set(style='darkgrid')
 
 def y(x):
@@ -38,11 +38,11 @@ def graph_y(x):
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
 
-    ax.plot(x, y(x), color='blue',
+    ax.plot(x, y(x), color='red',
             label=r'$y(x)=-\frac{16}{x^4(1+16\ln(\frac{x}{2}))}$')
 
-    ax.spines[['left', 'bottom']].set_position('zero')
-    ax.spines[['right', 'top']].set_visible(False)
+    # ax.spines[['left', 'bottom']].set_position('zero')
+    # ax.spines[['right', 'top']].set_visible(False)
     # ax.set_aspect('equal')
     seaborn.despine(ax=ax, offset=0)
     plt.legend(loc='best', prop={'size': 10})
