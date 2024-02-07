@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn
 import pandas as pd
-seaborn.set(style='darkgrid')
+
+seaborn.set_style("darkgrid", {'grid.color':'.6','grid.style':'dots'})
 
 def y(x):
     # place your final solution to the equation here
@@ -44,7 +45,7 @@ def graph_y(x):
     # ax.spines[['left', 'bottom']].set_position('zero')
     # ax.spines[['right', 'top']].set_visible(False)
     # ax.set_aspect('equal')
-    seaborn.despine(ax=ax, offset=0)
+    seaborn.despine(ax=ax, offset=0, top=False,bottom=True)
     plt.legend(loc='best', prop={'size': 10})
     plt.show()
 
