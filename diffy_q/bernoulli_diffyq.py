@@ -7,13 +7,14 @@ seaborn.set_style("darkgrid", {'grid.color':'.6','grid.style':'dots'})
 
 def y(x):
     # place your final solution to the equation here
-    return -16/(x**4*limit(x)) #ex1
+    # return -16/(x**4*limit(x)) #ex1
+    return np.power(((139*np.exp(15*x)-3*np.exp(-2*x))/17), 0.333)
 def limit(x):
     # place the limiting interval to solve for here
     return (1+16*np.log(x/2)) #ex1
 def ex_1():
     #set the interval of validity and number of iterations you wish to compute
-    x=np.linspace(2*np.exp(-1/16)+0.01, 5, 100)
+    x=np.linspace(-0.2, 0.4, 10000)
     #set a resonable interval you wish to check the limit of x
     x_lim=np.linspace(-10,10,100)
 
@@ -40,12 +41,12 @@ def graph_y(x):
     ax = fig.add_subplot(1, 1, 1)
 
     ax.plot(x, y(x), color='red',
-            label=r'$y(x)=-\frac{16}{x^4(1+16\ln(\frac{x}{2}))}$')
+            label=r'$y(x)=\left(\frac{139e^{15x}-3e^{-2x}}{17}\right)^{1/3}$')
 
     # ax.spines[['left', 'bottom']].set_position('zero')
     # ax.spines[['right', 'top']].set_visible(False)
     # ax.set_aspect('equal')
-    seaborn.despine(ax=ax, offset=0, top=False,bottom=True)
+    seaborn.despine(ax=ax, offset=0)
     plt.legend(loc='best', prop={'size': 10})
     plt.show()
 
