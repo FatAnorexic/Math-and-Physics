@@ -8,17 +8,21 @@ seaborn.set_style("darkgrid", {'grid.color':'.6','grid.style':'dots'})
 def y(x):
     # place your final solution to the equation here
     # return -16/(x**4*limit(x)) #ex1
-    return np.power(((139*np.exp(15*x)-3*np.exp(-2*x))/17), 0.333)
+    return np.power(((139*np.exp(15*x)-3*np.exp(-2*x))/17), 0.333) #ex2
 def limit(x):
     # place the limiting interval to solve for here
     return (1+16*np.log(x/2)) #ex1
 def ex_1():
     #set the interval of validity and number of iterations you wish to compute
-    x=np.linspace(-0.2, 0.4, 10000)
+    x=np.linspace(2*np.exp(-10), 5, 100)
     #set a resonable interval you wish to check the limit of x
     x_lim=np.linspace(-10,10,100)
 
     # graph_limit(x_lim)
+    graph_y(x)
+
+def ex_2():
+    x = np.linspace(-0.2, 0.4, 10000)
     graph_y(x)
 
 def graph_limit(x):
@@ -53,4 +57,5 @@ def graph_y(x):
 
 if __name__=='__main__':
     #call your main function here
-    ex_1()
+    # ex_1()
+    ex_2()
