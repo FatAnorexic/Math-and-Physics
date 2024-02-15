@@ -11,8 +11,9 @@ def y(x):
     # return 9/5*(1/3*(200+x)+np.sin(x)+(2*np.cos(x))/(200+x)
     #             -(2*np.sin(x))/((200+x)**2))-4600720/((200+x)**2)   #ex_1
     # return (4000-3998*np.exp(-3/800*x) if x<=35.475 else (435.475-x)**2/320) #ex_2
-    return np.piecewise(x, [x<=35.475, x>35.475],[lambda x:4000-3998*np.exp(-3/800*x),
-                                                  lambda x:(435.475-x)**2/320])
+    # return np.piecewise(x, [x<=35.475, x>35.475],[lambda x:4000-3998*np.exp(-3/800*x),
+    #                                               lambda x:(435.475-x)**2/320])
+    return 112/np.log(3)-1.9468*np.exp(np.log(3)/14*x) #ex_3_final
 # def interval(x):
 
 def ex_1():
@@ -44,17 +45,33 @@ def ex_2():
     x=np.linspace(0,450,100)
     graph_y(x)
 
+def ex_3():
+    '''
+     A population of insects in a region will grow at a rate that is proportional to
+     their current population. In the absence of any outside factors the population
+     will triple in two weeks time. On any given day there is a net migration into
+     the area of 15 insects and 16 are eaten by the local bird population and 7 die of
+     natural causes. If there are initially 100 insects in the area will the population
+     survive? If not, when do they die out?
+    '''
+    # print(f'c={100-112/np.log(3)}')
+    # print(f't={(14*np.log(112/(1.9468*np.log(3))))/np.log(3)}')
+    x=np.linspace(0, 50, 100)
+    graph_y(x)
+
 # def graph_lim(x):
     #
 def graph_y(x):
-    ax.plot(x, y(x), color='blue', label=r'$Q(t)=\frac{big}{ass}eqation$')
+    ax.plot(x, y(x), color='blue', label=r'$P(t)=\frac{112}{\ln3}-1.9468e^{\frac{\ln(3)}{14}t}$')
     ax.spines[['left', 'bottom']].set_position('zero')
-    ax.set_xticks(range(0,550,50))
-    ax.set_ylabel(ylabel='Q(t)', loc='top', rotation=0)
+    ax.set_xticks(range(0,55,10))
+    ax.set_yticks(range(0,120,20))
+    ax.set_ylabel(ylabel='P(t)', loc='top', rotation=0)
     ax.set_xlabel(xlabel='t',loc='right')
     plt.legend(loc='best', prop={'size': 10})
     plt.show()
 
 if __name__=='__main__':
     # ex_1()
-    ex_2()
+    # ex_2()
+    ex_3()
