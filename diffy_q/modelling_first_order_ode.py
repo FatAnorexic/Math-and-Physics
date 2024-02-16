@@ -13,9 +13,15 @@ def y(x):
     # return (4000-3998*np.exp(-3/800*x) if x<=35.475 else (435.475-x)**2/320) #ex_2
     # return np.piecewise(x, [x<=35.475, x>35.475],[lambda x:4000-3998*np.exp(-3/800*x),
     #                                               lambda x:(435.475-x)**2/320])
-    return 112/np.log(3)-1.9468*np.exp(np.log(3)/14*x) #ex_3_final
-# def interval(x):
+    # return 112/np.log(3)-1.9468*np.exp(np.log(3)/14*x) #ex_3_final
+    return 98-108*np.exp(-x/10) #ex_4_v(t)
 
+def interval(x):
+
+    #we subtract the 100 from the left side in order to get the zero of the function
+    #This allows fsolve to solve for x properly
+    #return 98 * x + 1080 * np.exp(-1 / 10 * x) - 1080  # ex_4_distance_s(t)_graphing
+    return 98 * x + 1080 * np.exp(-1 / 10 * x) - 1180  # ex_4_distance_s(t)
 def ex_1():
     """
     A 1500 gallon tank initially contains 600 gallons of water with 5 lbs
@@ -59,19 +65,37 @@ def ex_3():
     x=np.linspace(0, 50, 100)
     graph_y(x)
 
-# def graph_lim(x):
-    #
+def ex_4():
+
+    x_t=np.linspace(0,8,100)
+    # graph_lim(x_t)
+    print(f't={fsolve(interval,[-3,5])}')
+    v_t=np.linspace(0,5.98,100)
+    print(f'v(5.981)={y(5.981)} m/s')
+    graph_y(v_t)
+
+def graph_lim(x):
+    ax.plot(x, interval(x), color='red', label=r'$100=98t+1080e^{-\frac{1}{10}t}-1080$')
+    ax.spines[['left', 'bottom']].set_position(('data', 0))
+    ax.set_xticks(range(0, 9, 1))
+    # ax.set_yticks(range(0, 120, 10))
+    ax.set_ylabel(ylabel='s(t)', loc='top', rotation=0)
+    ax.set_xlabel(xlabel='t', loc='right')
+    plt.legend(loc='best', prop={'size': 10})
+    plt.show()
 def graph_y(x):
-    ax.plot(x, y(x), color='blue', label=r'$P(t)=\frac{112}{\ln3}-1.9468e^{\frac{\ln(3)}{14}t}$')
+    ax.plot(x, y(x), color='blue', label=r'$v(t)=98-108e^{-\frac{1}{10}t}$')
     ax.spines[['left', 'bottom']].set_position('zero')
-    ax.set_xticks(range(0,55,10))
-    ax.set_yticks(range(0,120,20))
-    ax.set_ylabel(ylabel='P(t)', loc='top', rotation=0)
+    ax.set_xticks(range(0,7,1))
+    ax.set_yticks(range(-10,50,5))
+    ax.set_ylabel(ylabel='v(t) m/s', loc='top', rotation=0)
     ax.set_xlabel(xlabel='t',loc='right')
+    ax.xaxis.set_label_coords(1.05,0.20)
     plt.legend(loc='best', prop={'size': 10})
     plt.show()
 
 if __name__=='__main__':
     # ex_1()
     # ex_2()
-    ex_3()
+    # ex_3()
+    ex_4()
