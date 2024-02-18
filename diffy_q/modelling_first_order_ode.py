@@ -66,7 +66,12 @@ def ex_3():
     graph_y(x)
 
 def ex_4():
-
+    """
+    A 50 kg object is shot from a cannon straight up with an initial
+    velocity of 10m/s off a bridge that is 100 meters above the ground.
+    If air resistance is given by 5v determine the velocity of the mass
+    when it hits the ground.
+    """
     x_t=np.linspace(0,8,100)
     # graph_lim(x_t)
     print(f't={fsolve(interval,[-3,5])}')
