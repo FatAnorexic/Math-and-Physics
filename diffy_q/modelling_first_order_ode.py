@@ -78,7 +78,13 @@ def ex_4():
     v_t=np.linspace(0,5.98,100)
     print(f'v(5.981)={y(5.981)} m/s')
     graph_y(v_t)
-
+def ex_5():
+    """
+    A 50 kg object is shot from a cannon straight up with an initial velocity of 10m/s off a bridge that is 100 meters
+    above the ground. If air resistance is given by 5v2 determine the velocity of the mass at any time t.
+    """
+    #we need to find time t when the initial velocity given=0 and the object is at its zenith
+    print(f't={-10/np.sqrt(98)*np.arctan(-10/np.sqrt(98))}')
 def graph_lim(x):
     ax.plot(x, interval(x), color='red', label=r'$100=98t+1080e^{-\frac{1}{10}t}-1080$')
     ax.spines[['left', 'bottom']].set_position(('data', 0))
@@ -103,4 +109,5 @@ if __name__=='__main__':
     # ex_1()
     # ex_2()
     # ex_3()
-    ex_4()
+    # ex_4()
+    ex_5()
