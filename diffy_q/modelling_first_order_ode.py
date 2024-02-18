@@ -84,7 +84,9 @@ def ex_5():
     above the ground. If air resistance is given by 5v2 determine the velocity of the mass at any time t.
     """
     #we need to find time t when the initial velocity given=0 and the object is at its zenith
-    print(f't={-10/np.sqrt(98)*np.arctan(-10/np.sqrt(98))}')
+    print(f'0=v(t) -> t={-10/np.sqrt(98)*np.arctan(-10/np.sqrt(98))}')
+
+
 def graph_lim(x):
     ax.plot(x, interval(x), color='red', label=r'$100=98t+1080e^{-\frac{1}{10}t}-1080$')
     ax.spines[['left', 'bottom']].set_position(('data', 0))
