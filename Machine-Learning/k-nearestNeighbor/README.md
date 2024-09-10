@@ -25,3 +25,5 @@ if you wish to exclude any weights saved to execution, be sure to include `*.pkl
 irisInfo.py grabs the iris dataset from scikit, and logs that data to the console. Recommended if it is your first time looking at this. 
 
 simpleKNNTest.py will plot the data, train the model using the iris dataset and test that trained model. 
+
+breastCancerExample.py demonstrates plotting training and testing data using knn, and determining the best 'generalization' for n-neighbors.
