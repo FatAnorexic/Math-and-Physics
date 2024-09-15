@@ -2,3 +2,5 @@
 .idea
 .gitignore
 *.pkl
+data/
+Machine-Learning/Gradient_Boosting_Machines/scratchPaper.py
