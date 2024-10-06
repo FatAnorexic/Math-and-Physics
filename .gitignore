@@ -1,6 +1,6 @@
 .venv
 .idea
-*.pkl
+.pkl
 model.pth
 data/
 Machine-Learning/Gradient_Boosting_Machines/scratchPaper.py
