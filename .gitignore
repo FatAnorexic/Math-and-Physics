@@ -6,3 +6,4 @@ data/
 Machine-Learning/Gradient_Boosting_Machines/scratchPaper.py
 .vscode/
 .gitignore
+diffy_q/slope_fields/slope_field_practice.ipynb
